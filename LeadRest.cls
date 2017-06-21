@@ -47,7 +47,6 @@ global with sharing class LeadRest {
         {
             Lead thisLead = [SELECT Id FROM Lead WHERE FirstName=:getFirstName AND
                                 LastName=:getLastName AND Email=:getEmail AND Phone=:getPhone];
-            System.debug('**************'+thisLead);
             delete thisLead;
 
             response.addHeader('Content-Type', 'application/json');
